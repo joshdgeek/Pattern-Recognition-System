@@ -43,7 +43,7 @@ function gg(a,b,arr){
         }
 
          else{
-            return "<br/>"+(notification + "<br/>"+"no more pattern observed: program terminated !")
+            return "<br/>"+(notification + "<br/>"+"discontinuous pattern observed: program terminated !")
         }
        
     }// multiplication and division pattern 
@@ -78,10 +78,7 @@ function gg(a,b,arr){
       numbers.innerHTML = arrs
   }
 
-
   
-
-
 
 
 //
