@@ -53,7 +53,7 @@ function gg(a,b,arr){
 
   function submit(){
     let numbers = document.querySelector(".numbers");
-
+   
       var x = prompt("your number :");
       var y = parseInt(x)
       if(Number.isInteger(y)){
