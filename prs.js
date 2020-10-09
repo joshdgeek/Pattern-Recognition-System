@@ -1,5 +1,5 @@
-let arrs = []
-function gg(a,b,arr){
+let arrayPattern = []
+function pattern(a,b,arr){
         let one = arr[0];
         let two = arr[1];
         var add = two-one;
@@ -10,36 +10,36 @@ function gg(a,b,arr){
     }
     else{
          arr.splice(0,1)
-        let notification =    "new array: " + arr  + "<br/>" + "test cases: "+arr[0] + "," + arr[1];
+        let notification =    ("new array: " + arr  + "<br/>" + "test cases: "+arr[0] + "," + arr[1]);
      
         if(arr[0]+add===arr[1]){
 
                 if(arr[0]>arr[1]){
-                    return ("<br/>"+(notification + "<br/>"+"subtraction pattern, value: "+ add)+"<br/>"+gg(a,b,arr)+"<br/>")
+                    return ("<br/>"+(notification + "<br/>"+"subtraction pattern, value: "+ add)+"<br/>"+pattern(a,b,arr)+"<br/>")
                 } 
                 else if(arr[0]<arr[1]){
-                    return ("<br/>"+ (notification + "<br/>"+"additional pattern,value: "+ add)+"<br/>"+gg(a,b,arr)+"<br/>")
+                    return ("<br/>"+ (notification + "<br/>"+"additional pattern,value: "+ add)+"<br/>"+pattern(a,b,arr)+"<br/>")
                 }
 
-                return gg(a,b,arr)
+                return pattern(a,b,arr)
         }//addiition and subtraction verification
 
         else if(arr[0]*mult===arr[1]){
             if(arr[0]>arr[1]){
-                console.log(notification + "<br/>"+"division pattern observed ")+gg(a,b,arr)+"<br/>"
+                return("<br/>"+ notification + "<br/>"+"division pattern observed ")+"<br/>"+pattern(a,b,arr)+"<br/>"
             } 
             else if(arr[0]<arr[1]){
-              return "<br/>"+(notification + "<br/>"+"multiplication pattern, value: "+ mult)+"<br/>"+gg(a,b,arr)+"<br/>"
+              return "<br/>"+(notification + "<br/>"+"multiplication pattern, value: "+ mult)+"<br/>"+pattern(a,b,arr)+"<br/>"
             }
-            return gg(a,b,arr)
+            return pattern(a,b,arr)
         }
 
         else if(arr[0]===Math.sqrt(arr[1])){
                 if(arr[0]<arr[1]){
-                return "<br/>"+(notification + "<br/>"+"power series pattern observed" + "<br/>") + gg(a,b,arr)+ "<br/>"
+                return "<br/>"+(notification + "<br/>"+"power series pattern observed" + "<br/>") + pattern(a,b,arr)+ "<br/>"
                 
                 }
-            return gg(a,b,arr)
+            return pattern(a,b,arr)
         }
 
          else{
@@ -47,35 +47,35 @@ function gg(a,b,arr){
         }
        
     }// multiplication and division pattern 
-}   
+}   //end of function (pattern)
 
  
 
-  function submit(){
+  function submit(){     //submits the userinput and adds it to the array
     let numbers = document.querySelector(".numbers");
    
-      var x = prompt("your number :");
-      var y = parseInt(x)
-      if(Number.isInteger(y)){
-          arrs.push(y)
+      var userInput = prompt("your number :");
+      var userIntValue = parseInt(userInput)
+      if(Number.isInteger(userIntValue)){
+          arrayPattern.push(userIntValue)
       }
-      console.log(arrs)
-      numbers.innerHTML = arrs
+      console.log(arrayPattern)
+      numbers.innerHTML = arrayPattern
   }
  
-  function activate(){
+  function activate(){  //this function triggers the Pattern functionality on the UI
    let result = document.querySelector(".result")   
   
-   let answer = gg(arrs[0],arrs[1],arrs)
-    console.log(gg(arrs[0],arrs[1],arrs));
+   let answer = pattern(arrayPattern[0],arrayPattern[1],arrayPattern); 
+    console.log(pattern(arrayPattern[0],arrayPattern[1],arrayPattern));
    result.innerHTML = answer
   }
 
- function edit(){
+ function edit(){ //REMOVE AN INPUT
     let numbers = document.querySelector(".numbers");
-      arrs.pop()
-      console.log(arrs)
-      numbers.innerHTML = arrs
+      arrayPattern.pop()
+      console.log(arrayPattern)
+      numbers.innerHTML = arrayPattern
   }
 
   
