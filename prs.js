@@ -1,5 +1,5 @@
 let arrs = []
-function gg(a,b,arr){
+function pattern(a,b,arr){
         let one = arr[0];
         let two = arr[1];
         var add = two-one;
@@ -21,17 +21,17 @@ function gg(a,b,arr){
                     return ("<br/>"+ (notification + "<br/>"+"additional pattern,value: "+ add)+"<br/>"+gg(a,b,arr)+"<br/>")
                 }
 
-                return gg(a,b,arr)
+                return pattern(a,b,arr)
         }//addiition and subtraction verification
 
         else if(arr[0]*mult===arr[1]){
             if(arr[0]>arr[1]){
-                console.log(notification + "<br/>"+"division pattern observed ")+gg(a,b,arr)+"<br/>"
+              return(notification + "<br/>"+"division pattern observed ")+gg(a,b,arr)+"<br/>"
             } 
             else if(arr[0]<arr[1]){
               return "<br/>"+(notification + "<br/>"+"multiplication pattern, value: "+ mult)+"<br/>"+gg(a,b,arr)+"<br/>"
             }
-            return gg(a,b,arr)
+            return pattern(a,b,arr)
         }
 
         else if(arr[0]===Math.sqrt(arr[1])){
@@ -39,7 +39,7 @@ function gg(a,b,arr){
                 return "<br/>"+(notification + "<br/>"+"power series pattern observed" + "<br/>") + gg(a,b,arr)+ "<br/>"
                 
                 }
-            return gg(a,b,arr)
+            return pattern(a,b,arr)
         }
 
          else{
@@ -54,10 +54,10 @@ function gg(a,b,arr){
   function submit(){
     let numbers = document.querySelector(".numbers");
    
-      var x = prompt("your number :");
-      var y = parseInt(x)
-      if(Number.isInteger(y)){
-          arrs.push(y)
+      var userInput = prompt("your number :");
+      var userIntValue = parseInt(userInput)
+      if(Number.isInteger(userIntValue)){
+          arrs.push(userIntValue)
       }
       console.log(arrs)
       numbers.innerHTML = arrs
