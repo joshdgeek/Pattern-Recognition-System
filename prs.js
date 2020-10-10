@@ -1,4 +1,5 @@
 let arrayPattern = []
+
 function pattern(a,b,arr){
         let one = arr[0];
         let two = arr[1];
@@ -27,6 +28,9 @@ function pattern(a,b,arr){
         else if(arr[0]*mult===arr[1]){
             if(arr[0]>arr[1]){
                 return("<br/>"+ notification + "<br/>"+"division pattern observed ")+"<br/>"+pattern(a,b,arr)+"<br/>"
+
+              return(notification + "<br/>"+"division pattern observed ")+gg(a,b,arr)+"<br/>"
+
             } 
             else if(arr[0]<arr[1]){
               return "<br/>"+(notification + "<br/>"+"multiplication pattern, value: "+ mult)+"<br/>"+pattern(a,b,arr)+"<br/>"
@@ -57,7 +61,11 @@ function pattern(a,b,arr){
       var userInput = prompt("your number :");
       var userIntValue = parseInt(userInput)
       if(Number.isInteger(userIntValue)){
+
           arrayPattern.push(userIntValue)
+
+          arrs.push(userIntValue)
+
       }
       console.log(arrayPattern)
       numbers.innerHTML = arrayPattern
