@@ -2,8 +2,8 @@ i just had to make this code to work ,
 forgive me for the messy codes
 the code will undergo adjustment with time
 ## ALGORITHM:
- i created an empty array 
- i declared some variables "one,two add and mult" for conditional statement handling
+ i created an empty array ,
+ i declared some variables "one,two add and mult" for conditional statement handling.
  performed a recursive algorithm to revisit the new array after splicing the first character and running the conditional statements.
 !! thats the basic idea of the project;
 
